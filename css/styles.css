@@ -43,6 +43,17 @@ body {
 	align-self: center;
 }
 
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 body,td,th,p{
 	font-family: 'Roboto', sans-serif;
 	font-size: 10pt;
@@ -60,11 +71,11 @@ ul, li {
 	color: #333;
 }
 a {
-	color: orange;
+	color: #a36a00;
 	text-decoration: none;
 }
 a:hover, a:focus {
-	color: #3397db;
+	color: #1f77b2;
 	text-decoration: none;
 }
 a img{
@@ -83,7 +94,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	margin: auto;
 }
 #footer {
-  background-color: #444;
+  background-color: black;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
@@ -129,7 +140,7 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
+    color: #0265bb;
     text-decoration: none;
 }
 
@@ -148,7 +159,7 @@ nav h1 a {
 .filter-options {
 	padding-top: 10px;
   width: 100%;
-  background-color: #3397DB;
+  background-color: #1f77b2;
   align-items: center;
 }
 .filter-options h2 {
@@ -209,7 +220,7 @@ nav h1 a {
 	flex: 1;
 }
 #restaurants-list li h1 {
-  color: #f18200;
+  color: #b35f00;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -223,7 +234,7 @@ nav h1 a {
   font-size: 11pt;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #a36a00;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
@@ -255,7 +266,7 @@ nav h1 a {
   width: 100%;
 }
 #restaurant-name {
-  color: #f18200;
+  color: #b35f00;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
@@ -294,7 +305,7 @@ nav h1 a {
 	min-width: 270px;
 }
 #reviews-container h2 {
-  color: #f58500;
+  color: #995400;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
