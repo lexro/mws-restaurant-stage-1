@@ -1,11 +1,11 @@
 {
   "name": "mws-restaurant-stage-1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.html",
   "repository": "https://github.com/lexro/mws-restaurant-stage-1.git",
   "author": "\"\"",
   "license": "MIT",
-  "scripts": { 
+  "scripts": {
     "start" : "python3 -m http.server 8000"
   },
   "private": true
