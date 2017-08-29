@@ -3,7 +3,6 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
@@ -14,9 +13,9 @@
 <body class="inside">
   <div class="content">
     <!-- Beginning header -->
-    <header>
+    <header role="banner">
       <!-- Beginning nav -->
-      <nav>
+      <nav role="navigation">
         <h1><a href="/">Restaurant Reviews</a></h1>
       </nav>
       <!-- Beginning breadcrumb -->
@@ -29,26 +28,27 @@
     <!-- End header -->
 
     <!-- Beginning main -->
-    <main id="maincontent">
+    <main role="main" id="maincontent">
       <!-- Beginning map -->
       <div class="row">
         <!-- End map -->
         <!-- Beginning restaurant -->
-        <section id="restaurant-container" class="col col-center">
-          <h1 id="restaurant-name"></h1>
-          <img id="restaurant-img">
-          <p id="restaurant-cuisine"></p>
-          <p id="restaurant-address"></p>
-          <table id="restaurant-hours"></table>
+        <section role="contentinfo" id="restaurant-container" class="col col-center">
+          <h1 tabindex="0" id="restaurant-name"></h1>
+          <h2 tabindex="0" id="restaurant-rating"></h2>
+          <img tabindex="0" id="restaurant-img">
+          <p tabindex="0" id="restaurant-cuisine"></p>
+          <p tabindex="0" id="restaurant-address"></p>
+          <table tabindex="0" id="restaurant-hours"></table>
         </section>
 
-        <section id="map-container" class="col">
+        <section role="region" aria-labelledby="Map of restaurant" id="map-container" class="col">
           <div id="map"></div>
         </section>
       </div>
       <!-- end restaurant -->
       <!-- Beginning reviews -->
-      <section id="reviews-container" >
+      <section role="region" aria-labelledby="List of reviews" id="reviews-container" >
         <ul id="reviews-list"></ul>
       </section>
       <!-- End reviews -->
@@ -57,27 +57,13 @@
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer role="contentinfo" id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->
 
   <!-- Beginning scripts -->
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          // Registration was successful
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-          // registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
-    } else {
-      console.log('ServiceWorker not supported');
-    }
-  </script>
+  <script type="text/javascript" src="js/register-sw.js"></script>
   <!-- Database helpers -->
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->

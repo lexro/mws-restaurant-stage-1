@@ -11,14 +11,14 @@
 
 <body>
   <div class="content">
-    <header>
-      <nav>
+    <header role="banner">
+      <nav role="navigation">
         <h1><a href="/">Restaurant Reviews</a></h1>
       </nav>
     </header>
 
-    <main id="maincontent">
-      <section>
+    <main role="main" id="maincontent">
+      <section role="form" aria-labelledby="restaurant filter">
         <div class="filter-options">
           <h2>Filter Results</h2>
           <div class="row">
@@ -34,37 +34,22 @@
           </div>
         </div>
       </section>
-      <section id="map-container">
+      <section role="region" aria-labelledby="Map of restaurants" id="map-container">
         <div id="map"></div>
       </section>
-      <section>
+      <section role="region" aria-labelledby="List of restaurants">
         <ul id="restaurants-list" class="row"></ul>
       </section>
     </main>
   </div>
 
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          // Registration was successful
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-          // registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
-    } else {
-      console.log('ServiceWorker not supported');
-    }
-  </script>
-
+  <script type="text/javascript" src="js/register-sw.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-  <footer id="footer">
+  <footer role="contentinfo" id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 

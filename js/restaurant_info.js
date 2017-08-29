@@ -49,12 +49,25 @@ fetchRestaurantFromURL = (callback) => {
   }
 }
 
+getAverageRating = () => {
+  if (!self.restaurant.reviews || !self.restaurant.reviews.length) {
+    return 0;
+  }
+
+  return self.restaurant.reviews.reduce((sum, review) => {
+    return  sum + review.rating;
+  }, 0) / self.restaurant.reviews.length;
+}
+
 /**
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+
+  const rating = document.getElementById('restaurant-rating');
+  rating.innerHTML = 'Rating: ' + self.getAverageRating().toFixed(1);
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
@@ -102,6 +115,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  title.setAttribute('tabindex', 0);
   container.appendChild(title);
 
   if (!reviews) {
@@ -138,6 +152,7 @@ createReviewHTML = (review) => {
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 
+  li.setAttribute('tabindex', 0);
   return li;
 }
 
