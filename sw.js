@@ -17,7 +17,7 @@ const urlsToCache = [
   'index.html',
   'restaurant.html'
 ];
-const CACHE_NAME = 'rr-cache-v2';
+const CACHE_NAME = 'rr-cache-v3';
 
 // precache this stuff
 this.addEventListener('install', function (event) {
